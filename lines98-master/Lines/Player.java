@@ -5,14 +5,14 @@ package Lines;
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
-
+//Tao class Player de nhap thong tin cua nguoi choi 
 public class Player{
-	
+ //khai bao bien name va scores 
 	public String name;
 	public int  scores;
 	
 	public Player(){
-		this.name = "";
+		this.name = " ";
 		this.scores=0;
 	}
 	public Player(String name,int scores){
@@ -21,10 +21,10 @@ public class Player{
 	}
 	public void setName(){
 		 String a;
- 		 a = JOptionPane.showInputDialog(" Ten cua ban la gi vay ?")+"";
+ 		 a = JOptionPane.showInputDialog("nhap ten cua ban")+"";
  		 this.name=a;
 	}	
-	//ghi thong tin Player ra doi tuong out
+	//luu thong tin cua Player vao doi tuong in 
 	public void writeData(DataOutput out)throws IOException{
 		writeFixedString(this.name, 20 , out);
         out.writeInt(this.scores);
@@ -34,10 +34,10 @@ public class Player{
 	//doc thong tin vao Player tu doi tuong in
 	public void readData( DataInput in)throws IOException{
 		this.name = readFixedString(20, in);
-        this.scores 	    = in.readInt();
+        this.scores = in.readInt();
       	
 	}	
-		//doc xau do dai size tu doi tuong in (tham khao file DataIO.java cua BTH09)	
+		//doc xau do dai size của nguoi nhap 
 	public  String readFixedString(int size, DataInput in)
 	  	throws IOException{
     	
@@ -56,7 +56,7 @@ public class Player{
       	return b.toString();
  	}
 	
-	//ghi size ki tu cua xau s vao doi tuong out (tham khao file DataIO.java cua BTH09)
+	//ghi size ki tu cua xau s vao doi tuong out 
    	public  void writeFixedString(String s, int size, DataOutput out)
       throws IOException{
       	int i;
