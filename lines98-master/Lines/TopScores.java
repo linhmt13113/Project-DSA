@@ -6,6 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
 
+//Tao bang luu nhung nguoi choi co so diem cao nhat 
 public class TopScores extends JFrame{
 	
 	public Player  player[] =new Player[10];
@@ -17,17 +18,18 @@ public class TopScores extends JFrame{
 			this.player[i]=new Player();
 			this.player[i].name= "player"+(i+1);
 		}
+		//Bang hien ten va so diem dat duoc cua nguoi choi 
 		for(int i=0;i<10;i++){
 			number[i]=new JButton((i+1)+". "+this.player[i].name+"  :   "+this.player[i].scores);
 			add(number[i]);
 		}
-		setTitle(" TopScores");
+		setTitle(" TopScores of Player");
 		setSize(200,320);
 		setLayout(new GridLayout(10,1));
 		setResizable(false);		
 	}
 	
-	//sap xep player
+	//Sap xep tu thap den cao cua cac Player
 	public void sortPlayer(){
 		for(int i=0;i<10;i++)
 			for(int j=i;j>0;j--)
@@ -38,7 +40,7 @@ public class TopScores extends JFrame{
 				}		
 	}
     
-    //them 1 player vao TopScores
+    //Chuc nang them Player moi 
 	public void add(Player newPlayer)throws IOException{
 		readFile();
 		if(this.player[9].scores<newPlayer.scores){
@@ -51,7 +53,7 @@ public class TopScores extends JFrame{
 		}
 	}
 	
-	//ghi thong tin Player ra file TopScores.dat
+	//Luu thong tin Player vao file TopScores.dat
 	public void writeFile()throws IOException {
 	 	DataOutputStream out = new DataOutputStream(new FileOutputStream("TopScores.dat"));
 		for(int i=0;i<10;i++)
