@@ -140,7 +140,7 @@ public void setMenu(){
 
 }
 //----------------------------------------------------------------------------------------
-//lui lai 1 buoc
+//lui lai 1 buoc.
 public void StepBack(){
 	a.Undo();
 	displayNextBall();
