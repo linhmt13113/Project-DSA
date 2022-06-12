@@ -1,6 +1,6 @@
 
 package Lines;
-
+//import lib
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -40,7 +40,7 @@ public class TopScores extends JFrame{
 				}		
 	}
     
-    //Chuc nang them Player moi 
+    //Chuc nang them Top score player moi 
 	public void add(Player newPlayer)throws IOException{
 		readFile();
 		if(this.player[9].scores<newPlayer.scores){
@@ -78,7 +78,7 @@ public class TopScores extends JFrame{
 		show();
 	}
 	
-	//reset la TopScores
+	//reset TopScores board
 	public void resetTopScores()throws IOException{
 		new TopScores();
 		writeFile();
