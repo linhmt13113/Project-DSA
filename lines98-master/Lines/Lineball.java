@@ -174,7 +174,7 @@ public class Lineball{
     	
     //-------------------------------------------------------------------       
          
-       
+       // This part using DFS to traverse all 8 directions from the current ball.
      public boolean cutBall(){
     	int NumCutBall = 0;//So bong bi cut
     	int nBall;
@@ -304,7 +304,8 @@ public class Lineball{
 			PathBall[nCountPath++]=p;
 		}	     	
     //-------------------------------------------------------------------
-    //tham khao tai trang web http://my.opera.com/hodawa/blog/viettrochoiline
+
+	// using BFS in this part to find to the (fi, fj) coordinator
     public boolean Loang(int si, int sj, int fi, int fj){ // Loang de tim duong di tu (si,sj)-->(fi,fj);
      
      	int [] di = {-1, 1, 0, 0};
