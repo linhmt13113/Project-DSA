@@ -1,7 +1,7 @@
 
 
 package Lines;
-
+// import library
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
@@ -24,7 +24,7 @@ public class Player{
  		 a = JOptionPane.showInputDialog("nhap ten cua ban")+"";
  		 this.name=a;
 	}	
-	//luu thong tin cua Player vao doi tuong in 
+	//ghi thong tin Player ra doi tuong out 
 	public void writeData(DataOutput out)throws IOException{
 		writeFixedString(this.name, 20 , out);
         out.writeInt(this.scores);
